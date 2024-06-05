@@ -1,0 +1,429 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.5s ease;
+    background-image: url('bg/1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    background-color: #000000;
+    padding: 1em 0;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    padding: 0 1em;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-right: 1em;
+}
+
+.logo-description h1 {
+    margin: 0;
+    color: rgb(255, 251, 0);
+}
+
+.logo-description p {
+    margin: 0.5em 0;
+    color: white;
+}
+
+
+
+/* css gaya untuk navigati  */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 0.5em 0;
+}
+
+nav ul li a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+nav ul li a.active::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+/* Aturan gaya untuk gambar konten home */
+.home-content img {
+    width: 100%; /* Gambar mengisi lebar kontainer */
+    max-width: 600px; /* Ukuran maksimum gambar */
+    height: auto; /* Lebar gambar menyesuaikan tinggi */
+    border-radius: 8px; /* Membuat sudut gambar menjadi bundar */
+    transition: transform 0.3s ease; /* Efek transisi saat gambar ditekan */
+}
+
+/* Efek tekan saat konten home ditekan */
+.home-content img:hover {
+    transform: scale(1.05); /* Perbesar gambar saat ditekan */
+}
+
+/* Media queries untuk layar kecil */
+@media screen and (max-width: 768px) {
+    .home-content img {
+        max-width: 100%; /* Gambar mengisi lebar kontainer pada layar kecil */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Codingan content */
+.content-section {
+    padding: 2em;
+    margin: 1em;
+    background-color: #ffffffb9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+
+.content-section:hover {
+    transform: translateY(-10px);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.student-grid, .teacher-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+}
+
+.student, .teacher, .memory {
+    text-align: center;
+    margin: 1em 0;
+}
+
+.student img, .teacher img, .gallery img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.student img:hover, .teacher img:hover, .gallery img:hover {
+    transform: scale(1.1);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    justify-items: center;
+    align-items: center;
+}
+
+
+
+footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    transition: background-color 0.5s ease;
+}
+
+/* Codingan ganti slide mahasiswa*/
+.pagination {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 0.5em 1em;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 0 0.5em;
+}
+
+.pagination a:hover {
+    background-color: #45a049;
+}
+
+.student {
+    display: flex;
+    flex-wrap: nowrap; /* Tidak pindah ke baris baru */
+    overflow-x: auto; /* Geser secara horizontal saat konten melebihi lebar */
+    gap: 1em;
+    margin-top: 1em;
+    padding-bottom: 1em; /* Membuat sedikit ruang di bagian bawah untuk scrollbar */
+    scrollbar-width: thin; /* Lebar scrollbar */
+    scrollbar-color: rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.1); /* Warna scrollbar */
+    white-space: nowrap; /* Hindari pembentukan baris baru untuk foto */
+}
+
+
+
+
+.teacher {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Tengahkan foto dan deskripsi */
+    gap: 1em;
+    margin-top: 2em;
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.8); /* Latar belakang semi-transparan */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.teacher img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.teacher-description {
+    text-align: center;
+   
+}
+
+.teacher-description h3 {
+    margin: 0;
+}
+
+.teacher-description p {
+    margin: 0;
+    font-size: small;
+}
+
+
+
+
+.gallery img{
+width: 350px;
+height: 350px;
+object-fit: cover;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+transform: scale(1.02);
+box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+
+.student img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.student img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Tombol navigasi halaman */
+.pagination {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 0.5em 1em;
+    background-color: #00a000;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 0 0.5em;
+}
+
+.pagination a:hover {
+    background-color: #45a049;
+}
+@media (max-width: 1200px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .student img, .teacher img {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 992px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .student img, .teacher img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+
+
+
+
+
+
+/* fungsi untuk link ig */
+.social-media {
+    display: flex;
+    align-items: center;
+    pointer-events: none; /* Tambahkan baris ini */
+}
+
+.instagram-link {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    margin-left: 1em;
+    pointer-events: auto; /* Tambahkan baris ini */
+}
+
+.instagram-link:hover {
+    color: #868484;
+}
+
+.instagram-logo {
+    font-size: 30px;
+    margin-right: 0.5em;
+}
+
+.instagram-name {
+    font-weight: bold;
+}
+
+
+
+
+/* Aturan gaya untuk konten home */
+.home-content {
+    background-image: url('bg/1.jpg'); /* Ganti path dengan lokasi gambar Anda */
+    background-size: cover; /* Agar gambar latar belakang mengisi seluruh konten */
+    background-position: center; /* Posisi gambar latar belakang di tengah */
+    color: #fff; /* Warna teks */
+    text-align: center; /* Posisi teks ke tengah */
+    padding: 100px 0; /* Padding atas dan bawah */
+    transition: background-position 0.3s ease; /* Efek transisi saat kursor menyentuh */
+}
+.home-content:hover {
+    background-position: top; /* Geser latar belakang ke atas saat kursor menyentuh */
+}
+
+/* Aturan gaya untuk teks di konten home */
+.home-content h1 {
+    font-size: 2.5rem; /* Ukuran font judul */
+    margin-bottom: 30px; /* Jarak bawah judul */
+}
+
+/* Aturan gaya untuk deskripsi konten home */
+.home-content p {
+    font-size: 2.1rem; /* Ukuran font teks */
+    justify-self: unset;
+    font-size: smaller;
+    margin-bottom: 40px; /* Jarak bawah teks */
+    color: #ffffff; /* Warna teks */
+    font-family: 'Montserrat', sans-serif; /* Gunakan font Montserrat atau font sans-serif lainnya */
+    line-height: 1.6; /* Tinggi baris untuk meningkatkan keterbacaan */
+}
+
+/* Media queries untuk layar kecil */
+@media screen and (max-width: 768px) {
+    .home-content p {
+        font-size: 1rem; /* Ukuran font teks pada layar kecil */
+    }
+}
+
+
+/* fungsi untuk membuat layar mengikuti semua bentuk layar */
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .student img, .teacher img {
+        width: 90px;
+        height: 90px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0.5em 0;
+    }
+
+    .logo-container {
+        flex-direction: column;
+    }
+
+    .logo {
+        margin: 0 auto 1em auto;
+    }
+}
+
+
+
+
